@@ -2026,7 +2026,7 @@ function! s:ProcessFile(fname, ftype) abort
         call fileinfo.reset()
     else
         if exists('#TagbarProjects#User')
-            execute 'doautocmd <nomodeline> TagbarProjects User ' . a:fname
+            execute 'silent doautocmd <nomodeline> TagbarProjects User ' . a:fname
             if exists('b:tagbar_type')
                 let typeinfo = extend(copy(typeinfo),
                                     \ s:TransformUserTypeDef(b:tagbar_type))
